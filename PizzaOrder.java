@@ -64,6 +64,52 @@ else if (inches ==13)
     input = scan.next();
     crustType: input.charAt(0);
     
-    if (crustType.equals("H")
+    if (crustType == 'H' || crustType == 'h') {
+        crust = "Hand-Tossed";
+    } else if (crustType == 'T' || crustType == 't') {
+        crust = "Thin-Crust";
+    } else if (crustType == 'D' || crustType == 'd') {
+        crust = "Deep-Dish";
+    } else if (crustType != 'H' && crustType != 'h' && crustType != 'T' && crustType != 't' && crustType != 'D' && crustType != 'd') {
+        System.out.println("The crust type you have entered is illegal, your crust type will be set to hand-tossed. ");
+    }
+    crust = "Hand-Tossed";
+    System.out.println("All pizzas come with cheese.");
+    System.out.println("Additional toppings are $1.25 each, choose from");
+    System.out.println("Pepperoni, Sausage, Onion, Mushroom");
+
+    
+    System.out.println("Do you want Pepperoni? (Yes/No)");
+    numberOfToppings = input.charAt(0);
+    if (numberOfToppings == 'Y' || numberOfToppings == 'y') {
+        numberOfToppings = numberOfToppings + 1;
+        toppings = toppings + " and Pepperoni";
+    } else {
+    }
+
+    
+    System.out.println("Do you want Sausage? (Y/N)");
+    numberOfToppings = input.charAt(0);
+    if (numberOfToppings == 'Y' || numberOfToppings == 'y') {
+        numberOfToppings = numberOfToppings + 1;
+        toppings = toppings + " and Sausage";
+    } else {
+    }
+   
+    System.out.println("Do you want Mushroom? (Y/N)");
+    numberOfToppings = input.charAt(0);
+    if (numberOfToppings == 'Y' || numberOfToppings == 'y') {
+        numberOfToppings = numberOfToppings + 1;
+        toppings = toppings + " and Mushroom";
+    } else {
+    }
+    
+    System.out.println("Do you want Onion? (Y/N)");
+    numberOfToppings = input.charAt(0);
+    if (numberOfToppings == 'Y' || numberOfToppings == 'y') {
+        numberOfToppings = numberOfToppings + 1;
+        toppings = toppings + " and Onion";
+    } else {
+    }
 }
 }
