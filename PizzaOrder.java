@@ -18,7 +18,7 @@ public class PizzaOrder
         String input;
         String toppings = "Cheese ";
         int numberOfToppings = 0;
-        
+        crustType = 0;
         System.out.println("\fWelcome to Mike and Diane's Pizza");
         System.out.print("Enter your first name: ");
         firstName = scan.nextLine();
@@ -62,7 +62,6 @@ else if (inches ==13)
     System.out.println("What kind of crust do you want?: ");
     System.out.println("Hand-tossed, Thin-crust, or Deep Dish, enter H, T, or D");
     input = scan.next();
-    crustType: input.charAt(0);
     
     if (crustType == 'H' || crustType == 'h') {
         crust = "Hand-Tossed";
@@ -70,8 +69,9 @@ else if (inches ==13)
         crust = "Thin-Crust";
     } else if (crustType == 'D' || crustType == 'd') {
         crust = "Deep-Dish";
-    } else if (crustType != 'H' && crustType != 'h' && crustType != 'T' && crustType != 't' && crustType != 'D' && crustType != 'd') {
-        System.out.println("The crust type you have entered is illegal, your crust type will be set to hand-tossed. ");
+    }
+    else {
+        System.out.println("Invalid letter entered");
     }
     crust = "Hand-Tossed";
     System.out.println("All pizzas come with cheese.");
@@ -79,8 +79,8 @@ else if (inches ==13)
     System.out.println("Pepperoni, Sausage, Onion, Mushroom");
 
     
-    System.out.println("Do you want Pepperoni? (Yes/No)");
-    numberOfToppings = input.charAt(0);
+    System.out.println("Do you want Pepperoni? (Y/N)");
+    numberOfToppings = scan.nextInt();
     if (numberOfToppings == 'Y' || numberOfToppings == 'y') {
         numberOfToppings = numberOfToppings + 1;
         toppings = toppings + " and Pepperoni";
@@ -111,5 +111,22 @@ else if (inches ==13)
         toppings = toppings + " and Onion";
     } else {
     }
+    cost = cost + (1.25*numberOfToppings);
+    
+    System.out.println();
+    System.out.println("Your order is as follows: ");
+    System.out.println(inches + " inch pizza");
+    System.out.println(crust + "crust");
+    System.out.println(toppings);
+    
+    if (firstName.equalsIgnoreCase("Diane") || firstName.equalsIgnoreCase("Mike"))
+            {
+                System.out.println("$2.00 discount for name");
+       
+    }
+    tax = (TAX_RATE*cost);
+    System.out.println("The tax is: $" + tax);
+    System.out.println("The total due is: $" + (tax+cost));
+    System.out.println("Your oder will be ready for pickup in 30 minutes.");
 }
 }
