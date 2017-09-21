@@ -31,7 +31,7 @@ public class OddEven{
             System.out.println ("There are " + odd + " odd digits."); 
         }
         else
-            System.out.println ("There is " + zero + " odd digit");
+            System.out.println ("There is " + odd + " odd digit");
         if (zero != 1){
             System.out.println ("There are " + zero + " zero digits."); 
         }

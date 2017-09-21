@@ -9,7 +9,7 @@ public class LoveCS
     public static void main(String[] args)
     {
         Scanner scan = new Scanner (System.in);
-        System.out.print("\fHow many times do you want the message to be printed? ");
+        System.out.print("\fHow many times do you want \"I love Computer Science\" to be printed: ");
         int limit = scan.nextInt();
         int count = 1;
         int sum = 0;
