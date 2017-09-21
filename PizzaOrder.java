@@ -62,7 +62,7 @@ else if (inches ==13)
     System.out.println("What kind of crust do you want?: ");
     System.out.println("Hand-tossed, Thin-crust, or Deep Dish, enter H, T, or D");
     input = scan.next();
-    
+    crustType = input.charAt(0);
     if (crustType == 'H' || crustType == 'h') {
         crust = "Hand-Tossed";
     } else if (crustType == 'T' || crustType == 't') {
@@ -79,54 +79,62 @@ else if (inches ==13)
     System.out.println("Pepperoni, Sausage, Onion, Mushroom");
 
     
-    System.out.println("Do you want Pepperoni? (Y/N)");
-    numberOfToppings = scan.nextInt();
-    if (numberOfToppings == 'Y' || numberOfToppings == 'y') {
-        numberOfToppings = numberOfToppings + 1;
-        toppings = toppings + " and Pepperoni";
-    } else {
-    }
-
+    System.out.print("Do you want Pepperoni? (Y/N)  ");
+    input = scan.next();
+    choice = input.charAt(0);
+    if (choice == 'Y' || choice == 'y')
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Pepperoni ";
+        }
     
-    System.out.println("Do you want Sausage? (Y/N)");
-    numberOfToppings = input.charAt(0);
-    if (numberOfToppings == 'Y' || numberOfToppings == 'y') {
-        numberOfToppings = numberOfToppings + 1;
-        toppings = toppings + " and Sausage";
-    } else {
-    }
+    System.out.print("Do you want Sausage?  (Y/N):  ");
+        input = scan.next();
+        choice = input.charAt(0);
+        if (choice == 'Y' || choice == 'y')
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Sausage ";
+        }
    
-    System.out.println("Do you want Mushroom? (Y/N)");
-    numberOfToppings = input.charAt(0);
-    if (numberOfToppings == 'Y' || numberOfToppings == 'y') {
-        numberOfToppings = numberOfToppings + 1;
-        toppings = toppings + " and Mushroom";
-    } else {
-    }
+    System.out.print("Do you want Mushrooms?  (Y/N):  ");
+        input = scan.next();
+        choice = input.charAt(0);
+        if (choice == 'Y' || choice == 'y')
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Mushrooms ";
+        }
     
-    System.out.println("Do you want Onion? (Y/N)");
-    numberOfToppings = input.charAt(0);
-    if (numberOfToppings == 'Y' || numberOfToppings == 'y') {
-        numberOfToppings = numberOfToppings + 1;
-        toppings = toppings + " and Onion";
-    } else {
-    }
+    System.out.print("Do you want Onion?  (Y/N):  ");
+        input = scan.next();
+        choice = input.charAt(0);
+        if (choice == 'Y' || choice == 'y')
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Onion ";
+        }
     cost = cost + (1.25*numberOfToppings);
     
     System.out.println();
     System.out.println("Your order is as follows: ");
     System.out.println(inches + " inch pizza");
-    System.out.println(crust + "crust");
+    System.out.println(crust + " crust");
     System.out.println(toppings);
     
     if (firstName.equalsIgnoreCase("Diane") || firstName.equalsIgnoreCase("Mike"))
             {
-                System.out.println("$2.00 discount for name");
+                System.out.println("$2.00 discount because you share a name with a owner!");
        
     }
+    
+    NumberFormat finalcost = NumberFormat.getCurrencyInstance();
+        NumberFormat finaltax = NumberFormat.getCurrencyInstance();
+        System.out.println("The cost of your order is: " + finalcost.format(cost));
+    
     tax = (TAX_RATE*cost);
-    System.out.println("The tax is: $" + tax);
-    System.out.println("The total due is: $" + (tax+cost));
-    System.out.println("Your oder will be ready for pickup in 30 minutes.");
+    System.out.println("The tax is:  " + finaltax.format(tax));
+    System.out.println("The total due is: $" + (finaltax.format(tax+cost)));
+    System.out.println("Your order will be ready for pickup in 30 minutes.");
 }
 }
